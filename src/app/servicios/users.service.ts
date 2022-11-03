@@ -8,12 +8,18 @@ import { user } from '../modelos/user.model';
 })
 export class UsersService {
 
- apiUrl:string= 'https://reqres.in/api/users?page=2';
+ apiUrl:string= 'http://localhost:3001/';
 
   constructor(private http:HttpClient) { }
 
-  getAllUsers():Observable<user[]>{
-    return this.http.get<user[]>(this.apiUrl);
+  getAllUsers():Observable<user>{
+    return this.http.get<user>(this.apiUrl);
   }
+
+
+  guardar(data:any):Observable<user>{
+    return this.http.get<user>(this.apiUrl+'/newColaborador');
+  }
+
 
 }

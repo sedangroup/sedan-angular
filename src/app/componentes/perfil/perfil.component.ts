@@ -9,7 +9,9 @@ export class PerfilComponent implements OnInit {
 
   constructor() { }
 
+  
   ngOnInit(): void {
   }
 
 }
+//este le toca a daniel

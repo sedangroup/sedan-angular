@@ -5,24 +5,35 @@ import { UsersService } from 'src/app/servicios/users.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
 
-  users:any={data:[]}
-  
-  constructor(private userService:UsersService) { }
+  users: user = {
+    page: 0,    
+    data: [
+      {
+        id: 0,
+        email: '',
+        first_name: '',
+        last_name: '',
+        avatar: '',
+      },
+    ],
+    total: 0,
+  };
+
+  constructor(private userService: UsersService) {}
 
   ngOnInit(): void {
-    this.userService.getAllUsers()
-    .subscribe({
-      next:(users)=>{
-        this.users = users;
-        console.log(this.users.data);
+    this.userService.getAllUsers().subscribe({
+      next: (response) => {
+        this.users = response;
+        console.log(response)
       },
-      error:(error)=>{
-        console.log(error)
-      }
-    })
+      error: (error) => {
+        console.log(error);
+      },
+    });
   }
 }
