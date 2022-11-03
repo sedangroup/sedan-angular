@@ -8,7 +8,7 @@ import { user } from '../modelos/user.model';
 })
 export class UsersService {
 
- apiUrl:string= 'http://localhost:3001/';
+ apiUrl:string= 'https://reqres.in/api/users?page=2';
 
   constructor(private http:HttpClient) { }
 

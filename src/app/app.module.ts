@@ -8,6 +8,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormularioComponent } from './componentes/formulario/formulario.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormularioComponent } from './componentes/formulario/formulario.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
